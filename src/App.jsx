@@ -12,7 +12,6 @@ const App = () => {
 
   const handleChange = (e) => {
     const value = parseInt(e.target.value, 10);
-
     setInfo(prev => [...prev, value]);
   }
 
@@ -26,10 +25,14 @@ const App = () => {
     setIsSubmitted(true);
   }
 
+  const handleReset = () => {
+    window.location.reload();
+  }
+
 
   return (
     <div className='w-full h-[100dvh] bg-slate-200 flex flex-col gap-4 justify-center items-center'>
-      <h1 className='font-bold text-2xl'>ASD Detection using Machine Learning</h1>
+      <h1 className='font-bold text-2xl'>Early Detection of ASD using Machine Learning Approaches</h1>
       <div className='w-4/5 h-4/5 border-2 border-gray-500 p-6 flex flex-col gap-6'>
         <div className='flex flex-wrap gap-4'>
           {
@@ -53,13 +56,24 @@ const App = () => {
             ) : null
           }
         </div>
-        <button
-          type="button"
-          onClick={handleSubmit}
-          className="w-max focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-md px-6 py-3 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-        >
-          Autism Scanning
-        </button>
+
+        <div className='flex gap-4'>
+          <button
+            type="button"
+            onClick={handleSubmit}
+            className="w-max focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-md px-6 py-3 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+          >
+            Autism Scanning
+          </button>
+          <button
+            type="button"
+            onClick={handleReset}
+            className="w-max focus:outline-none text-white bg-gray-600 hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-md px-6 py-3 me-2 mb-2 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+          >
+            Reset Form
+          </button>
+
+        </div>
 
         {
           isSubmitted && (
