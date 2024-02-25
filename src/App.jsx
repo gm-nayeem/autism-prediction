@@ -31,9 +31,9 @@ const App = () => {
 
 
   return (
-    <div className='w-full h-[100dvh] bg-slate-200 flex flex-col gap-4 justify-center items-center'>
-      <h1 className='font-bold text-2xl'>Early Detection of ASD using Machine Learning Approaches</h1>
-      <div className='w-4/5 h-4/5 border-2 border-gray-500 p-6 flex flex-col gap-6'>
+    <div className='w-full min-h-[100dvh] py-4 bg-slate-200 flex flex-col gap-4 justify-center items-center'>
+      <h1 className='font-bold text-2xl text-center'>Early Detection of ASD using Machine Learning Approaches</h1>
+      <div className='w-4/5 border-2 border-gray-500 p-6 flex flex-col gap-6'>
         <div className='flex flex-wrap gap-4'>
           {
             scoresData?.length > 0 ? (
